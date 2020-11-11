@@ -1,6 +1,6 @@
 /* eslint-disable default-param-last */
-import jwt from 'jsonwebtoken'
-import bcrypt from 'bcryptjs'
+// import jwt from 'jsonwebtoken'
+// import bcrypt from 'bcryptjs'
 import { tokenSecret } from './config'
 
 export const createToken = (data) => {

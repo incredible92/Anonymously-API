@@ -1,8 +1,26 @@
-import express from 'express'
+import express,{json} from 'express'
+import morgan from 'morgan'
+import cors from 'cors'
+import helmet from 'helmet'
+import { serverResponse } from './utils'
+import apiRoutes from './routes'
+import { dbURL } from './utils/config'
+
+
 const app = express()
 
-app.get('/', (req, res) => {
-	res.send('Hello world')
+app.use(morgan('dev'))
+app.use(cors())
+app.use(helmet())
+app.use(json())
+
+app.use('/api/v1', apiRoutes)
+app.use('/v1', apiRoutes)
+
+app.get('/muba', (req, res) => {
+	res.json({
+		name:"mubashir"
+	})
 })
 
 app.listen(9090, () => {
