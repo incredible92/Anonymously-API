@@ -17,9 +17,9 @@ app.use(json())
 app.use('/api/v1', apiRoutes)
 app.use('/v1', apiRoutes)
 
-app.get('/muba', (req, res) => {
+app.get('/incredible', (req, res) => {
 	res.json({
-		name:"mubashir"
+		name:"MRIncredible"
 	})
 })
 
