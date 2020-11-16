@@ -2,7 +2,7 @@ import Anon from '../models'
 
 import { createToken, serverResponse } from '../utils'
 
-export const signup = async (req, res) => {
+export const register = async (req, res) => {
   try {
     const anonExist = await Anon.countDocuments({ username: req.body.username })
 
@@ -16,7 +16,7 @@ export const signup = async (req, res) => {
     })
 
     serverResponse(res, {
-      message: 'Signup successful. Start receiving messages!',
+      message: 'register successful. Start receiving messages!',
       payload: {
         token
       }
